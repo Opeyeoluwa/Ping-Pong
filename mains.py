@@ -5,9 +5,10 @@ from scoreboard import Score
 import time
 
 screen = Screen()
-screen.setup(width=800, height=600)
-screen.bgcolor("black")
-screen.title("PING PONG")
+screen.setup(width=800, height=600, startx=0, starty=0)
+#screen.bgcolor("black")
+screen.bgpic("img.gif")
+screen.title("PING PONG PRO")
 screen.tracer(0)
 
 screen.listen()
