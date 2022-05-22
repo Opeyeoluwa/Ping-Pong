@@ -1,4 +1,4 @@
-<h1> </h1>
+<h1> Ping Pong Pro </h1>
 Hello!
 Thank you for checking out my project
 
