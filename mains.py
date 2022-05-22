@@ -5,13 +5,15 @@ from scoreboard import Score
 import time
 
 screen = Screen()
-screen.setup(width=800, height=600, startx=0, starty=0)
+screen.setup(width=800, height=600)
 #screen.bgcolor("black")
-screen.bgpic("img.gif")
+screen.bgpic("b.png")
 screen.title("PING PONG PRO")
 screen.tracer(0)
-
 screen.listen()
+
+
+
 l_paddle = Paddle((-350, 0))
 r_paddle = Paddle((350, 0))
 ping_ball = Ball()
@@ -19,10 +21,11 @@ score= Score()
 
 game_on = True
 
+# Use keys 1 and 2 for left paddle
+screen.onkey(l_paddle.up, "1")
+screen.onkey(l_paddle.down, "2")
 
-screen.onkey(l_paddle.up, "w")
-screen.onkey(l_paddle.down, "s")
-
+# Use Up and Down arrow keys for right paddle
 screen.onkey(r_paddle.up, "Up")
 screen.onkey(r_paddle.down, "Down")
 
@@ -30,7 +33,6 @@ while game_on:
     time.sleep(ping_ball.meter)
     screen.update()
     ping_ball.move()
-
 
 # detect collission with wall
     if ping_ball.ycor() > 280 or ping_ball.ycor() < -280:
@@ -50,7 +52,5 @@ while game_on:
     if ping_ball.xcor() < -380:
         ping_ball.refresh()
         score.r_scored()
-
-
 
 screen.exitonclick()
