@@ -12,11 +12,17 @@ class Score(Turtle):
         self.update()
         
     def update(self):
+        player_1 = input("Player 1 Enter your name: ")
+        player_2 = input("Player 2 Enter your name: ")
         self.clear()
-        self.goto(-100, 200)
-        self.write(self.l_score, align="center", font = ("Courier", 80, "normal"))
-        self.goto((100, 200))
-        self.write(self.r_score, align="center", font = ("Courier", 80, "normal"))
+        self.goto(-300, 250)
+        self.write(player_1, align= "left", font=("Courier", 20, "normal"))
+        self.goto(300, 250)
+        self.write(player_2, align= "right", font=("Courier", 20, "normal"))
+        self.goto(-100, 220)
+        self.write(self.l_score, align="center", font = ("Courier", 60, "normal"))
+        self.goto((100, 220))
+        self.write(self.r_score, align="center", font = ("Courier", 60, "normal"))
         
         
     def l_scored(self):
